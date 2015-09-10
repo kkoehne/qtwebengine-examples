@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>jquery.min.js</file>
+        <file>rotate.js</file>
+    </qresource>
+</RCC>
