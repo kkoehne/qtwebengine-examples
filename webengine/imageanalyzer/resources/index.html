@@ -1,0 +1,46 @@
+<script type="text/javascript" src="qwebchannel.js"></script>
+
+
+<html>
+    <body>
+    <!-- [ images list ] -->
+        <div style="float:right; width:50%; border-left: solid 1px black">
+            <div id="listdiv" align="center">
+                <h5>Images to be analyzed:</h5>
+                <select multiple size=10 id=imglist style="width:80%"></select>
+                <br />
+                <input type="button" id="evalbutton" value="Analyze" onclick="analyzeImages()" />
+            </div>
+        </div>
+    <!-- [ images list ] -->
+        <div style="width:50%">
+            <div id="titleblock" align="center">
+                <h2>Image Analyzer</h2>
+            </div>
+            <div id=outputdiv align=center>
+                <h4>Status: <span id=status>Idle</span></h4>
+                <h5>
+                    Latest Results:<br />
+                    Red: <span id=redval style="color:red">n/a</span><br />
+                    Green: <span id=greenval style="color:green">n/a</span><br />
+                    Blue: <span id=blueval style="color:blue">n/a</span><br />
+                </h5>
+                <h3>Click on images below to select for analysis</h3>
+            </div>
+        </div>
+        <!-- [ sample images ] -->
+        <div id=imagediv style="clear:both; text-align:center">
+        <hr/>
+            <img src="images/mtRainier.jpg" height=150px onclick='return addImage(this);' />
+            <img src="images/bellaCoola.jpg" height=150px onclick='return addImage(this);'/>
+            <img src="images/seaShell.jpg" height=150px onclick='return addImage(this);'/>
+        <!-- [ sample images ] -->
+            <img src="images/flower.jpg" height=150px onclick='return addImage(this);'/>
+            <img src="images/trees.jpg" height=150px onclick='return addImage(this);'/>
+        </div>
+
+    </body>
+</html>
+
+
+

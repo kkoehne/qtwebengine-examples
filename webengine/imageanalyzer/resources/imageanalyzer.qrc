@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>index.html</file>
+        <file>images/mtRainier.jpg</file>
+        <file>images/bellaCoola.jpg</file>
+        <file>images/trees.jpg</file>
+        <file>images/flower.jpg</file>
+        <file>images/seaShell.jpg</file>
+        <file>qwebchannel.js</file>
+        <file>imageanalyzer.js</file>
+    </qresource>
+</RCC>
