@@ -8,4 +8,5 @@ SUBDIRS += \
     scriptRotate \
     scriptRotate2 \
     imageanalyzer \
-    formValidation
+    formValidation \
+    webRtc
