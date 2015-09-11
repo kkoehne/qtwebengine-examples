@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
 
     QMainWindow window;
 
-    auto view = new QWebEngineView(&window);
-    view->setUrl(QUrl("http://www.qtworldsummit.com"));
+    QWebEngineView view;
+    view.setUrl(QUrl("http://www.qtworldsummit.com"));
 
     { // Use QWebEnginePage::scripts
         QWebEngineScript script;
@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
             script.setSourceCode(script.sourceCode() + QTextStream(&file).readAll());
         }
 
-        view->page()->scripts().insert(script);
+        view.page()->scripts().insert(script);
     }
 
-    window.setCentralWidget(view);
+    window.setCentralWidget(&view);
     window.show();
     window.resize(1024, 768);
 

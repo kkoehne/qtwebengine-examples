@@ -7,11 +7,11 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QMainWindow window;
+    QWebEngineView view;
 
-    auto view = new QWebEngineView(&window);
-    view->setUrl(QUrl("http://www.qtworldsummit.com"));
+    view.setUrl(QUrl("http://www.qtworldsummit.com"));
 
-    window.setCentralWidget(view);
+    window.setCentralWidget(&view);
     window.show();
     window.resize(1024, 768);
 

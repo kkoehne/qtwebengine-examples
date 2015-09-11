@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 
     QMainWindow window;
 
-    auto view = new QWebEngineView(&window);
-    view->setUrl(QUrl("http://www.qtworldsummit.com"));
+    QWebEngineView view;
+    view.setUrl(QUrl("http://www.qtworldsummit.com"));
 
     { // Use QWebEnginePage::runJavaScript
 
@@ -22,14 +22,14 @@ int main(int argc, char *argv[])
             toInject += QTextStream(&file).readAll();
         }
 
-        QObject::connect(view, &QWebEngineView::loadFinished,
-                         [toInject, view]() {
-            view->page()->runJavaScript(toInject);
+        QObject::connect(&view, &QWebEngineView::loadFinished,
+                         [toInject, &view]() {
+            view.page()->runJavaScript(toInject);
         });
 
     }
 
-    window.setCentralWidget(view);
+    window.setCentralWidget(&view);
     window.show();
     window.resize(1024, 768);
 

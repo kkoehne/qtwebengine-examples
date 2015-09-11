@@ -23,10 +23,8 @@ int main(int argc, char *argv[])
 
     QMainWindow window;
 
-    auto view = new QWebEngineView(&window);
-    view->setPage(new MyPage(view));
-    view->setUrl(QUrl("qrc:/index.html"));
-
+    QWebEngineView view;
+    view.setUrl(QUrl("qrc:/index.html"));
 
     { // Use QWebEnginePage::runJavaScript
 
@@ -41,7 +39,7 @@ int main(int argc, char *argv[])
             if (!file.open(QFile::ReadOnly))
                 return 1;
             script.setSourceCode(QTextStream(&file).readAll());
-            view->page()->scripts().insert(script);
+            view.page()->scripts().insert(script);
         }
 
     }
@@ -49,9 +47,10 @@ int main(int argc, char *argv[])
     ImageAnalyzer analyzer;
     QWebChannel channel;
     channel.registerObject(QStringLiteral("imageAnalyzer"), &analyzer);
-    view->page()->setWebChannel(&channel);
+    view.page()->setWebChannel(&channel);
 
-    window.setCentralWidget(view);
+
+    window.setCentralWidget(&view);
     window.show();
     window.resize(1024, 768);
 
