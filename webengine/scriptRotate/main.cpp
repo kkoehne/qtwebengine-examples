@@ -1,6 +1,7 @@
 #include <QApplication>
+#include <QFile>
 #include <QMainWindow>
-#include <QtWebEngineWidgets>
+#include <QWebEngineView>
 
 int main(int argc, char *argv[])
 {
