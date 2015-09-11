@@ -6,17 +6,6 @@
 #include <QWebEnginePage>
 #include <QWebChannel>
 
-
-class MyPage : public QWebEnginePage
-{
-    Q_OBJECT
-public:
-    explicit MyPage(QObject *parent = 0) : QWebEnginePage(parent) {}
-    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*level*/, const QString &message, int lineNumber, const QString &sourceID) {
-        qDebug() << sourceID << lineNumber << message;
-    }
-};
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -26,9 +15,7 @@ int main(int argc, char *argv[])
     QWebEngineView view;
     view.setUrl(QUrl("qrc:/index.html"));
 
-    { // Use QWebEnginePage::runJavaScript
-
-        QString toInject;
+    {   // Inject js files
         QStringList jsFiles = {":/qwebchannel.js", ":/imageanalyzer.js" };
         foreach (const QString &fileName, jsFiles) {
             QWebEngineScript script;
@@ -41,9 +28,9 @@ int main(int argc, char *argv[])
             script.setSourceCode(QTextStream(&file).readAll());
             view.page()->scripts().insert(script);
         }
-
     }
 
+    // Set up WebChannel
     ImageAnalyzer analyzer;
     QWebChannel channel;
     channel.registerObject(QStringLiteral("imageAnalyzer"), &analyzer);
@@ -56,5 +43,3 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
-
-#include "main.moc"
