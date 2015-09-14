@@ -4,18 +4,23 @@ import QtWebEngine 1.1
 import QtQuick.Layouts 1.0
 
 Rectangle {
+    id: permissionBar
+
     property var requestedFeature;
     property url securityOrigin;
     property WebEngineView view;
 
-    id: permissionBar
+    gradient: Gradient {
+        GradientStop { position: 0.0; color: "gray" }
+        GradientStop { position: 1.0; color: "darkgray" }
+    }
+
     visible: false
     height: acceptButton.height + 4
 
     onRequestedFeatureChanged: {
         message.text = securityOrigin + " wants to access " + message.textForFeature(requestedFeature);
     }
-
 
     RowLayout {
         anchors {
@@ -44,6 +49,7 @@ Rectangle {
             text: "Accept"
             Layout.alignment: Qt.AlignRight
             onClicked: {
+                console.log("grant feature permission");
                 view.grantFeaturePermission(securityOrigin, requestedFeature, true);
                 permissionBar.visible = false;
             }
@@ -53,6 +59,7 @@ Rectangle {
             text: "Deny"
             Layout.alignment: Qt.AlignRight
             onClicked: {
+                console.log("deny feature permission");
                 view.grantFeaturePermission(securityOrigin, requestedFeature, false);
                 permissionBar.visible = false
             }

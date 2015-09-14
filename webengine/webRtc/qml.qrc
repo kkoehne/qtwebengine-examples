@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>FeaturePermissionBar.qml</file>
+        <file>capture.js</file>
+        <file>index.html</file>
     </qresource>
 </RCC>
