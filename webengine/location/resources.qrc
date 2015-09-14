@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>FeaturePermissionBar.qml</file>
+        <file>index.html</file>
+        <file>location.js</file>
+    </qresource>
+</RCC>

@@ -9,4 +9,5 @@ SUBDIRS += \
     scriptRotate2 \
     imageanalyzer \
     formValidation \
-    photoBooth
+    photoBooth \
+    location
