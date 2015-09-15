@@ -1,0 +1,9 @@
+{
+    "Keys": ["dummydata"],
+    "Provider": "dummydata",
+    "Position": true,
+    "Satellite": false,
+    "Monitor" : false,
+    "Priority": 1000,
+    "Testable": true
+}
