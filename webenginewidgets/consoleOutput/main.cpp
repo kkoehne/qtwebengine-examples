@@ -11,7 +11,7 @@ public:
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*level*/,
                                   const QString &message, int lineNumber,
                                   const QString &sourceID) {
-        QMessageLogger(sourceID.toUtf8().constData(), lineNumber, "", "js").info(
+        QMessageLogger(sourceID.toUtf8().constData(), lineNumber, "", "js").debug(
                     message.toUtf8().constData());
     }
 };
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     window.setCentralWidget(&view);
     window.show();
-    window.resize(1024, 768);
+    window.resize(1024, 750);
 
     return app.exec();
 }

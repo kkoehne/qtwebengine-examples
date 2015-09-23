@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
     window.setCentralWidget(&view);
     window.show();
-    window.resize(1024, 768);
+    window.resize(1024, 750);
 
     return a.exec();
 }

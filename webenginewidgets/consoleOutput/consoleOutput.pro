@@ -4,4 +4,4 @@ CONFIG += c++11
 
 SOURCES += main.cpp
 
-RESOURCES += widgetsconsole.qrc
+RESOURCES += resources.qrc
