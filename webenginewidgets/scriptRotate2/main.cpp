@@ -18,20 +18,20 @@ int main(int argc, char *argv[])
 
     { // Use QWebEnginePage::scripts
 
+        QString src;
         QStringList jsFiles = {":/jquery.min.js", ":/rotate.js"};
         foreach (const QString &fileName, jsFiles) {
             QFile file(fileName);
             if (!file.open(QFile::ReadOnly))
                 return 1;
-            QString content = QTextStream(&file).readAll();
-
-            QWebEngineScript script;
-            script.setName(fileName);
-            script.setInjectionPoint(QWebEngineScript::DocumentReady);
-            script.setWorldId(QWebEngineScript::ApplicationWorld);
-            script.setSourceCode(content);
-            view.page()->scripts().insert(script);
+            src += QTextStream(&file).readAll();
         }
+
+        QWebEngineScript script;
+        script.setInjectionPoint(QWebEngineScript::DocumentReady);
+        script.setWorldId(QWebEngineScript::ApplicationWorld);
+        script.setSourceCode(src);
+        view.page()->scripts().insert(script);
     }
 
     window.setCentralWidget(&view);

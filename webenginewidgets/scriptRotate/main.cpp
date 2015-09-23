@@ -14,18 +14,18 @@ int main(int argc, char *argv[])
 
     { // Use QWebEnginePage::runJavaScript
 
-        QString toInject;
+        QString src;
         QStringList jsFiles = {":/jquery.min.js", ":/rotate.js"};
         foreach (const QString &fileName, jsFiles) {
             QFile file(fileName);
             if (!file.open(QFile::ReadOnly))
                 return 1;
-            toInject += QTextStream(&file).readAll();
+            src += QTextStream(&file).readAll();
         }
 
         QObject::connect(&view, &QWebEngineView::loadFinished,
-                         [toInject, &view]() {
-            view.page()->runJavaScript(toInject);
+                         [src, &view]() {
+            view.page()->runJavaScript(src);
         });
 
     }

@@ -16,18 +16,19 @@ int main(int argc, char *argv[])
     view.setUrl(QUrl("qrc:/index.html"));
 
     {   // Inject js files
+        QString src;
         QStringList jsFiles = {":/qwebchannel.js", ":/imageanalyzer.js" };
         foreach (const QString &fileName, jsFiles) {
-            QWebEngineScript script;
-            script.setName(fileName);
-            script.setWorldId(QWebEngineScript::MainWorld);
-
             QFile file(fileName);
             if (!file.open(QFile::ReadOnly))
                 return 1;
-            script.setSourceCode(QTextStream(&file).readAll());
-            view.page()->scripts().insert(script);
+            src += QTextStream(&file).readAll();
         }
+
+        QWebEngineScript script;
+        script.setWorldId(QWebEngineScript::MainWorld);
+        script.setSourceCode(src);
+        view.page()->scripts().insert(script);
     }
 
     // Set up WebChannel

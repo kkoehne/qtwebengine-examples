@@ -1,3 +1,6 @@
+var imageAnalyzer;
+var remaining;
+
 function pullList(count) {
     var imglist = document.getElementById('imglist');
     while(imglist.length > 0 && count > 0) {
@@ -29,7 +32,7 @@ function addImage(newimg) {
 function analyzeImages() {
     var imglist = document.getElementsByTagName('option');
     if (imglist.length > 0) {
-        stringlist = [];
+        var stringlist = [];
         for(var i = 0; i < imglist.length; i++) {
             stringlist[i] = imglist[i].value;
         }
