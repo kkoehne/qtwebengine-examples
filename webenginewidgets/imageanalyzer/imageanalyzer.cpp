@@ -153,6 +153,7 @@ void ImageAnalyzer::queueImage(QImage img)
     if (m_outstandingFetches == 0 && m_urlQueue.isEmpty()) {
         emit busyChanged();
         m_watcher->setFuture(QtConcurrent::mapped(m_imageQueue, averageRGB));
+        m_imageQueue.clear();
     }
 }
 
