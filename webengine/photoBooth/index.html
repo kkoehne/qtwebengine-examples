@@ -1,28 +1,19 @@
 <!doctype html>
 <html>
 <head>
-    <title>Photo Booth</title>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="main.css" type="text/css" media="all">
-    <script src="capture.js">
-    </script>
+  <title>Photo Booth</title>
+  <meta charset="utf-8">
+  <script src="capture.js"></script>
 </head>
 
-<body>
-<div class="contentarea">
-    <h1>
-      Photo Booth
-    </h1>
-    <p>Use WebRTC to capture still images</p>
-<div class="camera">
-    <video id="video">Video stream not available.</video>
-    <button id="startbutton">Take photo</button>
-</div>
-<canvas id="canvas"/>
-<div class="output">
-    <img id="photo" alt="The screen capture will appear in this box.">
-</div>
-</div>
-
+<body lang="en">
+  <h1>
+    Photo Booth
+  </h1>
+  <p>Use WebRTC to capture still images</p>
+  <video id="video">Video stream not available.</video>
+  <button id="startbutton">Take photo</button>
+  <canvas id="canvas"/>
+  <img id="photo" alt="The screen capture will appear in this box.">
 </body>
 </html>
