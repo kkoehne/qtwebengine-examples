@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>capture.js</file>
+        <file>index.html</file>
+    </qresource>
+</RCC>

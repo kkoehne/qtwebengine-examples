@@ -5,4 +5,5 @@ SUBDIRS += \
 	consoleOutput \
 	imageanalyzer \
 	scriptRotate \
-	scriptRotate2
+	scriptRotate2 \
+	photoBooth
