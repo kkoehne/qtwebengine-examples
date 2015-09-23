@@ -26,7 +26,7 @@
         startbutton = document.getElementById('startbutton');
 
         navigator.webkitGetUserMedia(
-            { video: true, audio: true },
+            { video: true, audio: false },
             function(stream) {
                 video.src = window.URL.createObjectURL(stream);
                 video.play();
