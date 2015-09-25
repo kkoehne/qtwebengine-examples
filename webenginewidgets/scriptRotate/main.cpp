@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QMainWindow>
 #include <QWebEngineView>
+#include <QTextStream>
 
 int main(int argc, char *argv[])
 {

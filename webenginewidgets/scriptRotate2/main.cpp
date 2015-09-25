@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QMainWindow>
+#include <QTextStream>
 #include <QWebEngineView>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>

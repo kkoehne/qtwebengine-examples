@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include <QWebEnginePage>
 #include <QWebEngineView>
+#include <QDebug>
 
 
 class MyPage : public QWebEnginePage
