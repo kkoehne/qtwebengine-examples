@@ -6,4 +6,5 @@ SUBDIRS += \
 	imageanalyzer \
 	scriptRotate \
 	scriptRotate2 \
-	photoBooth
+        photoBooth \
+        addBlocker
