@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-	minimal \
-	consoleOutput \
+	qtquick_minimal \
+	qtquick_consoleOutput \
 	formValidation \
 	location \
 	photoBooth

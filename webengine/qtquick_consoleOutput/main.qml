@@ -12,8 +12,8 @@ Window {
         url: "index.html"
 
         onJavaScriptConsoleMessage: {
-	    // forwards to qDebug
-            console.log(sourceID + ":" + lineNumber + " "  + message)
+            // forwards to qDebug
+            console.log(sourceID + ":" + lineNumber + " "  + message);
         }
     }
 }
