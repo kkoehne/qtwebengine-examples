@@ -11,15 +11,16 @@ Rectangle {
     property WebEngineView view;
 
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "gray" }
-        GradientStop { position: 1.0; color: "darkgray" }
+        GradientStop { position: 0.0; color: "darkgray" }
+        GradientStop { position: 1.0; color: "black" }
     }
 
     visible: false
-    height: acceptButton.height + 4
+    height: acceptButton.height + 10
 
     onRequestedFeatureChanged: {
-        message.text = securityOrigin + " wants to access " + message.textForFeature(requestedFeature);
+        message.text = securityOrigin + " wants to access "
+                + message.textForFeature(requestedFeature);
     }
 
     RowLayout {
@@ -30,6 +31,7 @@ Rectangle {
         }
         Label {
             id: message
+            color: "white"
             Layout.fillWidth: true
 
             function textForFeature(feature) {
@@ -50,7 +52,8 @@ Rectangle {
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 console.log("grant feature permission");
-                view.grantFeaturePermission(securityOrigin, requestedFeature, true);
+                view.grantFeaturePermission(securityOrigin,
+                                            requestedFeature, true);
                 permissionBar.visible = false;
             }
         }
@@ -60,7 +63,8 @@ Rectangle {
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 console.log("deny feature permission");
-                view.grantFeaturePermission(securityOrigin, requestedFeature, false);
+                view.grantFeaturePermission(securityOrigin,
+                                            requestedFeature, false);
                 permissionBar.visible = false
             }
         }
