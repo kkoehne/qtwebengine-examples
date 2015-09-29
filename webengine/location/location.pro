@@ -1,9 +1,5 @@
-TEMPLATE = app
+TEMPLATE = subdirs
 
-QT += webengine
-
-CONFIG += c++11
-
-SOURCES += main.cpp
-
-RESOURCES += resources.qrc
+SUBDIRS += \
+    location_app.pro \
+    position

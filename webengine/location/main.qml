@@ -21,7 +21,6 @@ Window {
     WebEngineView {
         id: webEngineView
         anchors.fill: parent
-        //url: "https://apprtc.appspot.com/"
         url: "qrc:/index.html"
 
         onFeaturePermissionRequested: {
