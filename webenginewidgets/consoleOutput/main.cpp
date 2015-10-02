@@ -1,5 +1,4 @@
 #include <QApplication>
-#include <QMainWindow>
 #include <QWebEngineView>
 #include <QMessageLogger>
 
@@ -21,16 +20,14 @@ int main(int argc, char *argv[])
     qSetMessagePattern("[%{category}] %{file}:%{line} %{message}");
     QApplication app(argc, argv);
 
-    QMainWindow window;
     QWebEngineView view;
     MyPage page;
 
     page.setUrl(QUrl("qrc:///index.html"));
     view.setPage(&page);
 
-    window.setCentralWidget(&view);
-    window.show();
-    window.resize(1024, 750);
+    view.show();
+    view.resize(1024, 750);
 
     return app.exec();
 }

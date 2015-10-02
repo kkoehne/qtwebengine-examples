@@ -1,9 +1,8 @@
 #include <QApplication>
+#include <QDebug>
 #include <QFile>
-#include <QMainWindow>
 #include <QWebEnginePage>
 #include <QWebEngineView>
-#include <QDebug>
 
 
 class MyPage : public QWebEnginePage
@@ -23,7 +22,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QMainWindow window;
     QWebEngineView view;
 
     MyPage page;
@@ -37,9 +35,8 @@ int main(int argc, char *argv[])
 
     view.setPage(&page);
 
-    window.setCentralWidget(&view);
-    window.show();
-    window.resize(1024, 750);
+    view.show();
+    view.resize(1024, 750);
 
     return a.exec();
 }

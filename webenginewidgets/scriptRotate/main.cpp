@@ -1,14 +1,11 @@
 #include <QApplication>
 #include <QFile>
-#include <QMainWindow>
-#include <QWebEngineView>
 #include <QTextStream>
+#include <QWebEngineView>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    QMainWindow window;
 
     QWebEngineView view;
     view.setUrl(QUrl("http://www.qtworldsummit.com"));
@@ -31,9 +28,8 @@ int main(int argc, char *argv[])
 
     }
 
-    window.setCentralWidget(&view);
-    window.show();
-    window.resize(1024, 750);
+    view.show();
+    view.resize(1024, 750);
 
     return a.exec();
 }
