@@ -7,4 +7,5 @@ SUBDIRS += \
 	scriptRotate \
 	scriptRotate2 \
         photoBooth \
-        addBlocker
+        addBlocker \
+        schemeHandler
