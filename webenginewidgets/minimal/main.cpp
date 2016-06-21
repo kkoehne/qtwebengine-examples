@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 
     QWebEngineView view;
 
-    view.setUrl(QUrl("http://www.qtworldsummit.com"));
+    view.setUrl(QUrl("http://www.qt.io"));
 
     view.show();
     view.resize(1024, 750);

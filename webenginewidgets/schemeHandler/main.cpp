@@ -11,7 +11,7 @@ class SchemeHandler : public QWebEngineUrlSchemeHandler
   Q_OBJECT
 public:
   SchemeHandler(QObject *parent = nullptr)
-    : QWebEngineUrlSchemeHandler("help", parent) {}
+    : QWebEngineUrlSchemeHandler(parent) {}
 
   void requestStarted(QWebEngineUrlRequestJob *job);
 };
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     view.setPage(&page);
 
     SchemeHandler handler;
-    view.page()->profile()->installUrlSchemeHandler(&handler);
+    view.page()->profile()->installUrlSchemeHandler("help", &handler);
 
     view.setUrl(QUrl("qrc:/index.html"));
     view.show();

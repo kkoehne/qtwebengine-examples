@@ -13,14 +13,12 @@ public:
     {
     }
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info)
+    void interceptRequest(QWebEngineUrlRequestInfo &info)
     {
         if (!info.requestUrl().host().contains("qt")) {
             qDebug() << "blocking" << info.requestUrl();
             info.block(true);
-            return true;
         }
-        return false;
     }
 };
 

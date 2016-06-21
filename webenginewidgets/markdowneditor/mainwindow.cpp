@@ -101,7 +101,7 @@ void MainWindow::onFileSave()
 void MainWindow::onFileSaveAs()
 {
     QString path = QFileDialog::getSaveFileName(this,
-        tr("Save MarkDown File"), "", tr("MarkDown File (*.md)"));
+        tr("Save MarkDown File"), "", tr("MarkDown File (*.md, *.markdown)"));
     if (path.isEmpty())
         return;
     filePath = path;
